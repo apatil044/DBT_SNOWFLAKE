@@ -1,6 +1,6 @@
 {{ config(materialized='view') }}
 
-with source_data as (
+with data as (
 
    select a.ID,LAST_NAME from raw_customers a inner join raw_orders b on a.ID=b.ID
 
@@ -8,4 +8,4 @@ with source_data as (
 )
 
 select *
-from source_data
+from data
